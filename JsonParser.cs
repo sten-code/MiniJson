@@ -1,4 +1,4 @@
-﻿namespace JsonLib
+﻿namespace MiniJson
 {
     public static class JsonParser // Library made by ghostkiller967/sten#7163 
     {

@@ -1,7 +1,7 @@
 # MiniJson
 A really small json parser and writer for C#
 
-You can load json into an object like this:
+Loading json into object
 ```csharp
 string json = @"{
   ""TestInt"": 1,
@@ -32,7 +32,7 @@ public class Test
 }
 ```
 
-Or you can load it into a dictionary like this:
+Loading json into a dictionary
 ```csharp
 string json = @"{
   ""TestInt"": 1,
@@ -51,6 +51,7 @@ string json = @"{
 
 Dictionary<string, object> test = json.FromJson<Dictionary<string, object>>();
 ```
+
 Writing to json from an object
 ```csharp
 Test test = new Test();
@@ -67,6 +68,7 @@ public class Test
     public double TestDouble { get; set; } = 1.1;
 }
 ```
+
 Writing to json from a dictionary
 ```csharp
 Dictionary<string, object> test = new Dictionary<string, object>
@@ -82,7 +84,8 @@ Dictionary<string, object> test = new Dictionary<string, object>
 
 string json = test.ToJson();
 ```
-You can also unformat json
+
+Unformatting json
 ```csharp
 string json = @"{
   ""TestInt"": 1,
@@ -101,7 +104,8 @@ string json = @"{
 
 string unformatted = json.UnformatJson();
 ```
-And this also includes formatting
+
+Formatting json
 ```csharp
 string json = "{""TestInt"":1,""TestString"":""Test"",""TestBool"":true,""TestList"":[""test1"",""test2""],""TestDictionary"":{""test1"":""test2""},""TestFloat"":1.1,""TestDouble"":1.1}";
 

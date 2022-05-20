@@ -2,7 +2,7 @@
 A really small json parser and writer for C#
 
 You can load json into an object like this:
-```
+```csharp
 string json = @"{
   ""TestInt"": 1,
   ""TestString"": ""Test"",
@@ -33,7 +33,7 @@ public class Test
 ```
 
 Or you can load it into a dictionary like this:
-```
+```csharp
 string json = @"{
   ""TestInt"": 1,
   ""TestString"": ""Test"",

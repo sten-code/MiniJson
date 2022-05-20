@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace JsonLib
 {
-    public static class JsonWriter
+    public static class JsonWriter // Library made by ghostkiller967/sten#7163
     {
         public static string ToJson(this object obj)
         {
@@ -12,6 +12,7 @@ namespace JsonLib
 
         private static string AddValue(object value, string json)
         {
+            if (value is null) return "null";
             Type type = value.GetType();
             if (type == typeof(string) || type == typeof(char))
             {
@@ -52,7 +53,6 @@ namespace JsonLib
                 }
                 json += "}";
             }
-            else if (value is null) json += "null";
             else
             {
                 json += "{";

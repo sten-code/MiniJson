@@ -1,5 +1,7 @@
 ﻿namespace JsonLib
 {
+    // Library made by ghostkiller967/sten#7163 
+    
     public static class JsonParser
     {
         public static T FromJson<T>(this string json)

@@ -51,3 +51,27 @@ string json = @"{
 
 Dictionary<string, object> test = json.FromJson<Dictionary<string, object>>();
 ```
+You can also unformat json
+```csharp
+string json = @"{
+  ""TestInt"": 1,
+  ""TestString"": ""Test"",
+  ""TestBool"": true,
+  ""TestList"": [
+    ""test1"",
+    ""test2""
+  ],
+  ""TestDictionary"": {
+    ""Test"": ""Test""
+  },
+  ""TestFloat"": 1.1,
+  ""TestDouble"": 1.1,
+}";
+
+string unformatted = json.UnformatJson();
+```
+And this also includes formatting
+```csharp
+string json = "{""TestInt"":1,""TestString"":""Test"",""TestBool"":true,""TestList"":[""test1"",""test2""],""TestDictionary"":{""Test"":""Test""},""TestFloat"":1.1,""TestDouble"":1.1}";
+
+string formatted = json.FormatJson();

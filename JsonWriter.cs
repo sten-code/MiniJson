@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.ComponentModel;
 
-namespace MiniJson
+namespace JsonLib
 {
-    public static class JsonWriter // Library made by ghostkiller967/sten#7163 
+    public static class JsonWriter
     {
         public static string ToJson(this object obj)
         {

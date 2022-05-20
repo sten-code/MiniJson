@@ -1,6 +1,6 @@
-﻿namespace MiniJson
+﻿namespace JsonLib
 {
-    public static class JsonParser // Library made by ghostkiller967/sten#7163 
+    public static class JsonParser
     {
         public static T FromJson<T>(this string json)
         {
@@ -37,6 +37,43 @@
             return unformatted;
         }
 
+        public static string FormatJson(this string json)
+        {
+            json = json.UnformatJson();
+            string formatted = "";
+            int depth = 0;
+            for (int i = 0; i < json.Length; i++)
+            {
+                if (json[i] == '[' || json[i] == '{')
+                {
+                    depth++;
+                    formatted += json[i] + "\n";
+                    for (int i2 = 0; i2 < depth; i2++) formatted += "    ";
+                }
+                else if (json[i] == ']' || json[i] == '}')
+                {
+                    depth--;
+                    formatted += "\n";
+                    for (int i2 = 0; i2 < depth; i2++) formatted += "    ";
+                    formatted += json[i];
+                }
+                else if (json[i] == ',')
+                {
+                    formatted += ",\n";
+                    for (int i2 = 0; i2 < depth; i2++) formatted += "    ";
+                }
+                else if (json[i] == ':')
+                {
+                    formatted += ": ";
+                } else
+                {                
+                    formatted += json[i];
+                }
+
+            }
+            return formatted;
+        }
+        
         public static List<string> Split(string json)
         {
             List<string> splitArray = new List<string>();

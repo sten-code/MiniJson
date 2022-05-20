@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.ComponentModel;
 
-namespace JsonLib
+namespace MiniJson
 {
     public static class JsonWriter // Library made by ghostkiller967/sten#7163 
     {

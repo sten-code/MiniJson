@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace JsonLib
 {
-    public static class JsonWriter
+    public static class JsonWriter // Library made by ghostkiller967/sten#7163 
     {
         public static string ToJson(this object obj)
         {

@@ -74,7 +74,7 @@
             return formatted;
         }
         
-        public static List<string> Split(string json)
+        private static List<string> Split(string json)
         {
             List<string> splitArray = new List<string>();
             if (json.Length == 2) return splitArray;
@@ -114,7 +114,7 @@
             return splitArray;
         }
 
-        public static (Type, object) ParseValue(string value)
+        private static (Type, object) ParseValue(string value)
         {
             if (value.Length == 0 || value == "null") return (null, null); // Parse null value
             else if (value[0] == '\"' && value[value.Length - 1] == '\"') return (typeof(string), value.Trim('"').Replace("\\", "")); // Parse string value
@@ -136,7 +136,7 @@
             return (null, null);
         }
         
-        public static object ParseObject(Type type, string json)
+        private static object ParseObject(Type type, string json)
         {
             object obj = Activator.CreateInstance(type);
             foreach (KeyValuePair<string, object> item in (Dictionary<string, object>)ParseValue(json).Item2) 

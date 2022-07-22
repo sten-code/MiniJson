@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace MiniJson
 {
-    public static class JsonWriter // Library made by ghostkiller967/sten#7163
+    public static class JsonWriter // Library made by sten-code/sten#7163
     {
         public static string ToJson(this object obj)
         {

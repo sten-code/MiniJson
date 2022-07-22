@@ -1,6 +1,6 @@
 ﻿namespace MiniJson
 {
-    public static class JsonParser // Library made by ghostkiller967/sten#7163
+    public static class JsonParser // Library made by sten-code/sten#7163
     {
         public static T FromJson<T>(this string json)
         {
